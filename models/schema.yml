@@ -1,0 +1,35 @@
+version: 2
+
+models:
+
+    - name: sales
+      description: all information related to sales
+      tests:
+        - unique:
+            column_name: "(orders_id || '-' || products_id)"
+            
+      columns:
+          - name: orders_id
+            description: identifiers of the orders
+            tests : 
+            - not_null 
+
+          - name: products_id
+            description: identifiers of the products
+            tests : 
+            - not_null
+
+          - name: qty
+
+          - name: turnover
+            description: the amount received in sales
+            tests : 
+            - not_null
+
+          - name: purchase_cost
+            description: total cost associated with the acquisition of goods and services
+            tests : 
+            - not_null
+
+          - name: margin
+            description: turnover - purchase cost
