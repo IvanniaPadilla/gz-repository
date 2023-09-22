@@ -34,3 +34,15 @@ models:
 
           - name: margin
             description : the product margin. Subtraction of the turnover and the purchase_cost
+            
+    - name: orders
+      description : Logistic and shipping metrics
+      tests:
+        - unique:
+            column_name: "orders_id"
+      
+      columns:
+          - name: operational_margin
+            description: the percentage of revenue a company keeps as operating profit
+            tests:
+              - not_null
